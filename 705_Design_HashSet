@@ -1,3 +1,4 @@
+// Method -1 (array)
 class MyHashSet {
     boolean arr[]=new boolean[1000001];
 
@@ -26,10 +27,14 @@ class MyHashSet {
     }
 }
 
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * MyHashSet obj = new MyHashSet();
- * obj.add(key);
- * obj.remove(key);
- * boolean param_3 = obj.contains(key);
- */
+//Method-2 collision--->1.Seprate Chaining✅-->used here(by List of List)
+                        2.Open addressing--->1. Linear Probing
+                                             2.Quadratic probing
+
+
+
+
+
+
+
+
