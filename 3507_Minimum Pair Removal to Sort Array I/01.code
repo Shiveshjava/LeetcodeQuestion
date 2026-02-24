@@ -1,0 +1,50 @@
+class Solution {
+    private boolean issorter(ArrayList <Integer>list) {
+		// TODO Auto-generated method stub
+		for(int i=0;i<list.size()-1;i++) {
+			if(list.get(i)>list.get(i+1)) {
+				return false;
+				
+			}
+		}
+		return true;
+	}
+	 
+
+	 public int minimumPairRemoval(int[] nums) {
+		 
+		 ArrayList<Integer> list =new ArrayList<>();
+		 for(int num: nums) {
+			 list.add(num);
+		 }
+		 int operation=0;
+		 while(!issorter(list)) {
+			 int index=minpairSum(list);
+			 int merged =list.get(index)+list.get(index+1);
+			 list.set(index, merged);
+			 list.remove(index+1);
+			 operation++;
+			 
+			 
+		 }
+		 
+		 
+		return operation; 
+	 }
+
+
+	private int minpairSum(ArrayList<Integer> list) {
+		int min=Integer.MAX_VALUE;
+		int index=-1;
+		for(int i=0;i<list.size()-1;i++) {
+			int sum=list.get(i)+list.get(i+1);
+			if(sum<min) {
+				min=sum;
+				index=i;
+			}
+			
+		}
+		// TODO Auto-generated method stub
+		return index;
+	}
+}
